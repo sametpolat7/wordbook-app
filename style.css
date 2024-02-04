@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+
+:root {
+    --main-text-color: #5F6F52;
+    --background-color: #FEFAE0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color);
+    color: var(--main-text-color);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--main-text-color);
+    height: 72px;
+    padding: .5rem;
+}
+
+#logo img {
+    width: 240px;
+    cursor: pointer;
+}
+
+#navbar span {
+    margin-right: .5rem;
+}
+
+#navbar span a {
+    text-decoration: none;
+    color: var(--main-text-color);
+    display: none;
+}
+
+#navbar span i {
+    cursor: pointer;
+}
+
+main {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.howto-container {
+    display: none;
+    margin: 1rem;
+}
+
+.row {
+    width: 100%;
+    margin-bottom: 1rem
+}
+
+[class*="col-"] {
+    width: 100%;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#startButton {
+    display: block;
+    margin: auto;
+    padding: 1rem 4rem;
+    background-color: #5F6F52;
+    color: #FEFAE0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: border .3s ease;
+}
+
+#startButton:hover {
+    border: 1px solid var(--main-text-color);
+    background-color: #FEFAE0;
+    color: #5F6F52;
+}
+
+.question-container {
+    margin: 8rem 1rem;
+}
+
+.question-box {
+    height: 240px;
+    margin: 0 auto;
+    border: 1px solid var(--main-text-color);
+    border-radius: 8px ;
+    box-shadow: 1px 1px 4px var(--main-text-color);
+}
+
+#question {
+    height: 50%;
+    font-size: 2rem;
+}
+
+#answers {
+    height: 50%;
+}
+
+#answers button {
+    margin: 0 auto;
+    padding: .5rem 2rem;
+    cursor: pointer;
+    border: 1px solid var(--main-text-color);
+    border-radius: 4px ;
+    background-color: var(--background-color);
+    color: var(--main-text-color);
+    font-size: 1rem;
+}
+
+.result-container {
+
+}
+
+.result-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#true {
+    text-align: center;
+    border: 1px solid red;
+}
+
+#false {
+    text-align: center;
+    border: 1px solid red;
+}
+
+
+
+
+/* =========== FOR DESKTOP ============ */
+@media screen and (min-width: 992px) {
+    /* Responsive */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    #logo img {
+        width: 360px;
+    }
+
+    #navbar span a {
+        display: inline;
+        font-size: 1.5rem;
+        border-radius: 2px;
+        padding: .5rem;
+    }
+
+    #navbarToggle {
+        display: none;
+    }
+
+    .howto-container {
+        margin: 1rem 0;
+    }
+
+    .howto-area {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .howto-box {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+
+}
