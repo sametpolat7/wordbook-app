@@ -15,22 +15,25 @@
 
   <nav class="d-flex justify-space-beetween align-item-center">
     <div id="logo" class="pointer w-50">
-      <img src="/assets/lightmode.png" alt="WordBook App Logo">
+      <img id="brand-img" src="/assets/lightmode.png" alt="WordBook App Logo">
     </div>
     <div id="navbar" class="w-50">
       <a href="/index.html">
         <i class="fa-solid fa-question fa-2xl"></i>
       </a>
-      <a class="d-none header-font" href="/index.html">How to play</a>
+      <a class="d-none f15w700" href="/index.html">How to play</a>
       <a href="https://www.linkedin.com/in/sametpolat17/" target="_blank">
         <i class="fa-brands fa-linkedin fa-2xl"></i>
       </a>
-      <a class="d-none header-font" href="https://www.linkedin.com/in/sametpolat17/" target="_blank">Contact Me!</a>
-      <i class="fa-regular fa-moon fa-2xl"></i>
+      <a class="d-none f15w700" href="https://www.linkedin.com/in/sametpolat17/" target="_blank">Contact Me!</a>
+      <i id="dark-mode" class="fa-regular fa-moon fa-2xl"></i>
     </div>
   </nav>
 
+  <div id="count-item" class="d-none"></div>
+
   <main class="d-flex f-column justify-space-beetween">
+
     <!--HOW TO PLAY START-->
     <section class="howto-container"> 
       <div class="howto-area">
@@ -55,37 +58,39 @@
           </div>
         </div>
       </div>
-      <button id="startButton" class="d-none">Go!</button>
+      <button id="start-button" class="pointer">Go!</button>
     </section>
     <!--HOW TO PLAY END-->
 
-    <section class="question-container">
-      <div class="question-box col-8">
-        <div id="question" class="centered header-font">
-          Lorem
-        </div>
-        <div id="answers" class="">
-          <div>
-            <button id="A" class=" pointer asisted-font">Hello</button>
-            <button id="B" class=" pointer asisted-font">World</button>
+    <section id="question-section" class="d-none">
+      <article class="question-container">
+        <div class="question-box col-8">
+          <div id="question" class="centered f2w700">
+            lorem
           </div>
-          <div>
-            <button id="C" class=" pointer asisted-font">Yaah</button>
-            <button id="D" class=" pointer asisted-font">Budo</button>
+          <div id="answers" class="">
+            <div>
+              <button id="A" class=" pointer f125w500">Hello</button>
+              <button id="B" class=" pointer f125w500">World</button>
+            </div>
+            <div>
+              <button id="C" class=" pointer f125w500">Yaah</button>
+              <button id="D" class=" pointer f125w500">Budo</button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="result-container">
-      <div class="result-area d-flex f-row justify-space-beetween">
-        <div id="true" class="col-2 header-font">Lorem</div>
-        <div id="false" class="col-2 header-font">Ipsum</div>
-      </div>
+      </article>
+  
+      <article class="result-container">
+        <div class="result-area d-flex f-row justify-space-beetween">
+          <div id="true" class="f15w700">Lorem</div>
+          <div id="false" class="f15w700">Ipsum</div>
+        </div>
+      </article>
     </section>
 
   </main>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
 
 :root {
-    --main-text-color: #5F6F52;
-    --background-color: #fff;
-    --desktop-header-font: 2rem;
+    --light-mode-main: #5f6f52;
+    --light-mode-asisted: #fff;
 }
 
 * {
@@ -29,25 +28,33 @@
     align-items: center;
 }
 
-.header-font {
+.f2w700 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.f15w700 {
     font-size: 1.5rem;
     font-weight: 700;
 }
 
-.asisted-font {
-    font-size: 1rem;
+.f125w500 {
+    font-size: 1.25rem;
     font-weight: 500;
 }
+
 
 body {
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--background-color);
-    color: var(--main-text-color);
+    background-color: var(--light-mode-asisted);
+    color: var(--light-mode-main);
+    opacity: 1;
+    transition: opacity .6s;
 }
 
 nav {
-    border-bottom: 1px solid var(--main-text-color);
+    border-bottom: 2px solid var(--light-mode-main);
     height: 72px;
     padding: .5rem;
 }
@@ -65,12 +72,20 @@ nav {
 }
 
 #navbar i {
-    color: #5F6F52;
+    color: var(--light-mode-main);
 }
 
 #navbar > :nth-child(n) {
     margin-right: 1.5rem;
     cursor: pointer;
+}
+
+.counting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+    font-size: 12rem;
 }
 
 .howto-container {
@@ -86,20 +101,11 @@ nav {
     width: 100%;
 }
 
-#startButton {
+#start-button {
+    display: block;
     margin: auto;
     padding: 1rem 4rem;
-    background-color: #5F6F52;
-    color: #FEFAE0;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: border .3s ease;
-}
 
-#startButton:hover {
-    border: 1px solid var(--main-text-color);
-    background-color: #FEFAE0;
-    color: #5F6F52;
 }
 
 .question-container {
@@ -109,18 +115,16 @@ nav {
 .question-box {
     height: 480px;
     margin: 0 auto;
-    border: 1px solid #FEFAE0;
-    border-radius: 8px ;
-    box-shadow: 1px 1px 4px #5F6F52;
 }
 
 #question {
-    height:28%;
-    border-bottom: 1px solid #5F6F52;
+    height:20%;
+    border-radius: 16px;
+    border: 2px solid var(--light-mode-main);
 }
 
 #answers {
-    height: 72%;
+    height: 80%;
 }
 
 #answers div {
@@ -133,19 +137,26 @@ nav {
     margin-top: 2.3rem;
     width: 50%;
     padding: .75rem;
-    border: none;
-    background-color: #5F6F52;
-    color: #FEFAE0;
+    border: 1px solid var(--light-mode-main);
+    background-color: var(--light-mode-asisted);
+    color: var(--light-mode-main);
 }
 
 #true {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
     text-align: center;
-    border: 1px solid red;
+    border: 1px solid var(--light-mode-main);
 }
 
 #false {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
     text-align: center;
-    border: 1px solid red;
+    border: 1px solid var(--light-mode-main);
 }
 
 
@@ -177,7 +188,7 @@ nav {
         display: inline;
         margin-right: 3rem;
         text-decoration: none;
-        color: var(--main-text-color);
+        color: var(--light-mode-main);
     }
 
     .howto-container {
@@ -194,7 +205,12 @@ nav {
         flex-direction: row;
     }
 
+    #question {
+        height: 28%;
+    }
+
     #answers {
+        height: 72%;
         display: flex;
         flex-direction: column;
     }
@@ -217,5 +233,13 @@ nav {
 
     #answers > :last-child {
         margin-bottom: 5rem;
+    }
+
+    #true {
+        width: 16.66%;
+    }
+
+    #false {
+        width: 16.66%;
     }
 }
