@@ -2,13 +2,41 @@
 
 :root {
     --main-text-color: #5F6F52;
-    --background-color: #FEFAE0;
+    --background-color: #fff;
+    --desktop-header-font: 2rem;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.d-flex {display: flex;}
+.f-column {flex-direction: column;}
+.f-row {flex-direction: row;}
+.justify-cont-center {justify-content: center;}
+.justify-space-beetween {justify-content: space-between;}
+.justify-space-evenly {justify-content: space-evenly;}
+.align-item-center {align-items: center;}
+.pointer {cursor: pointer;}
+.d-none {display: none;}
+.w-50 {width: 50%;}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-font {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.asisted-font {
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 body {
@@ -19,42 +47,33 @@ body {
 }
 
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     border-bottom: 1px solid var(--main-text-color);
     height: 72px;
     padding: .5rem;
 }
 
 #logo img {
-    width: 240px;
-    cursor: pointer;
+    width: 200px;
 }
 
-#navbar span {
-    margin-right: .5rem;
+#navbar {
+    text-align: end;
 }
 
-#navbar span a {
+#navbar a {
     text-decoration: none;
-    color: var(--main-text-color);
-    display: none;
 }
 
-#navbar span i {
+#navbar i {
+    color: #5F6F52;
+}
+
+#navbar > :nth-child(n) {
+    margin-right: 1.5rem;
     cursor: pointer;
-}
-
-main {
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .howto-container {
-    display: none;
     margin: 1rem;
 }
 
@@ -67,19 +86,11 @@ main {
     width: 100%;
 }
 
-.centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #startButton {
-    display: block;
     margin: auto;
     padding: 1rem 4rem;
     background-color: #5F6F52;
     color: #FEFAE0;
-    font-size: 1.5rem;
     cursor: pointer;
     border: 1px solid transparent;
     transition: border .3s ease;
@@ -92,45 +103,39 @@ main {
 }
 
 .question-container {
-    margin: 8rem 1rem;
+    margin: 4rem 2rem;
 }
 
 .question-box {
-    height: 240px;
+    height: 480px;
     margin: 0 auto;
-    border: 1px solid var(--main-text-color);
+    border: 1px solid #FEFAE0;
     border-radius: 8px ;
-    box-shadow: 1px 1px 4px var(--main-text-color);
+    box-shadow: 1px 1px 4px #5F6F52;
 }
 
 #question {
-    height: 50%;
-    font-size: 2rem;
+    height:28%;
+    border-bottom: 1px solid #5F6F52;
 }
 
 #answers {
-    height: 50%;
+    height: 72%;
+}
+
+#answers div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #answers button {
-    margin: 0 auto;
-    padding: .5rem 2rem;
-    cursor: pointer;
-    border: 1px solid var(--main-text-color);
-    border-radius: 4px ;
-    background-color: var(--background-color);
-    color: var(--main-text-color);
-    font-size: 1rem;
-}
-
-.result-container {
-
-}
-
-.result-area {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin-top: 2.3rem;
+    width: 50%;
+    padding: .75rem;
+    border: none;
+    background-color: #5F6F52;
+    color: #FEFAE0;
 }
 
 #true {
@@ -145,10 +150,8 @@ main {
 
 
 
-
 /* =========== FOR DESKTOP ============ */
 @media screen and (min-width: 992px) {
-    /* Responsive */
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
     .col-3 {width: 25%;}
@@ -166,15 +169,15 @@ main {
         width: 360px;
     }
 
-    #navbar span a {
-        display: inline;
-        font-size: 1.5rem;
-        border-radius: 2px;
-        padding: .5rem;
+    #navbar > :nth-child(2n+1):not(:last-child) {
+        display: none;
     }
 
-    #navbarToggle {
-        display: none;
+    #navbar > :nth-child(2n) {
+        display: inline;
+        margin-right: 3rem;
+        text-decoration: none;
+        color: var(--main-text-color);
     }
 
     .howto-container {
@@ -191,6 +194,28 @@ main {
         flex-direction: row;
     }
 
+    #answers {
+        display: flex;
+        flex-direction: column;
+    }
 
+    #answers button {
+        width: 30%;
+        padding: 1rem;
+        margin-top: 0;
+    }
 
+    #answers div {
+        height: 50%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #answers > :first-child {
+        margin-top: 3rem;
+    }
+
+    #answers > :last-child {
+        margin-bottom: 5rem;
+    }
 }
