@@ -43,7 +43,6 @@
     font-weight: 500;
 }
 
-
 body {
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
@@ -103,7 +102,7 @@ nav {
 }
 
 #question-area {
-    margin: 4rem 2rem;
+    margin: 2rem;
 }
 
 .question-box {
@@ -130,25 +129,52 @@ nav {
     color: var(--light-mode-main);
 }
 
-#left-dropdown {
+.dropdowns {
     position: absolute;
     bottom: 0;
-    width: 25%;
+    width: 48%;
+    border: 1px solid var(--light-mode-main);
 }
 
-#right-dropdown {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 25%;
-}
-
-.results {
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    padding: 1rem;
     background-color: var(--light-mode-asisted);
     color: var(--light-mode-main);
-    border: 2px solid var(--light-mode-main);
+    border: 1px solid var(--light-mode-main);
 }
+
+.badges {
+    font-size: .75rem;
+    margin-left: .5rem;
+    padding: .2rem .4rem;
+    border-radius: 50%;
+    background-color: var(--light-mode-main);
+    color: var(--light-mode-asisted);
+}
+
+.ans-list {
+    height: 140px;
+    overflow-y: scroll;
+}
+
+.ans-list ul {
+    font-size: 1.25rem;
+    list-style-type: none;
+}
+
+.ans-list ul li {
+    padding: .8rem;
+}
+
+.ans-list ul li:hover {
+    background-color: var(--light-mode-main);
+    color: var(--light-mode-asisted);
+}
+
 
 /* =========== FOR DESKTOP ============ */
 @media screen and (min-width: 992px) {
@@ -214,4 +240,13 @@ nav {
     #answers > :last-child {
         margin-bottom: 5rem;
     }
+
+    .dropdowns {
+        width: 16.66%;
+    }
+
+    .ans-list {
+        height: 360px;
+    }
+
 }

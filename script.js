@@ -9,7 +9,7 @@ class PageAnimations {
         const brandImg = document.getElementById("brand-img");
         const icon = document.getElementById("toggle");
         
-        // i added trim() because first click has returned always "  #5f6f52"
+        // i added trim() because first click always returned "  #5f6f52"
         if(currentColor.trim() == "#5f6f52") { 
             document.documentElement.style.setProperty("--light-mode-main", "#fff");
             document.documentElement.style.setProperty("--light-mode-asisted", "#5f6f52");
@@ -42,10 +42,16 @@ class PageAnimations {
     //     }, 1000)
     // }
 
-    dropdownAnimation(event) {
-        let dropdownId = event;
-        console.log(dropdownId)
+    resultDropdowns(event){
+        const correctAns = document.getElementById("correct-list");
+        const wrongAns = document.getElementById("wrong-list");
+        let btnId = event.target.id;
 
+        if(btnId === "correct-btn") {
+            correctAns.classList.toggle("d-none");
+        }else if(btnId === "wrong-btn") {
+            wrongAns.classList.toggle("d-none")
+        }
     }
 }
 
@@ -57,14 +63,30 @@ modeIcon.elem.addEventListener("click", modeIcon.darkMode);
 const startButton = new PageAnimations("start-button");
 startButton.elem.addEventListener("click", startButton.startAnimation);
 
-// ==== True or False Answers Dropdowns ====
-const trueAnsList = new PageAnimations("true");
-const falseAnsList = new PageAnimations("false");
-trueAnsList.elem.addEventListener("click", trueAnsList.dropdownAnimation);
-falseAnsList.elem.addEventListener("click", falseAnsList.dropdownAnimation);
+// ==== Correct or Wrong List Dropdowns ====
+const correctButton = new PageAnimations("correct-btn");
+const wrongButton = new PageAnimations("wrong-btn");
+correctButton.elem.addEventListener("click", correctButton.resultDropdowns);
+wrongButton.elem.addEventListener("click", wrongButton.resultDropdowns);
 
+window.addEventListener("click", (event) => {
+    const correctAns = document.getElementById("correct-list");
+    const wrongAns = document.getElementById("wrong-list");
 
-
+    if(event.target.id === "correct-btn") {
+        return;
+    }else if(event.target.id === "wrong-btn") {
+        return;
+    }else {
+        if(correctAns.clientHeight > 0) {
+            correctAns.classList.toggle("d-none");
+        }else if(wrongAns.clientHeight > 0) {
+            wrongAns.classList.toggle("d-none");
+        }else {
+            return;
+        }
+    }
+})
 
 class Questions {
     constructor() {
