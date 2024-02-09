@@ -49,8 +49,6 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--light-mode-asisted);
     color: var(--light-mode-main);
-    opacity: 1;
-    transition: opacity .6s;
 }
 
 nav {
@@ -88,10 +86,6 @@ nav {
     font-size: 12rem;
 }
 
-.howto-container {
-    margin: 1rem;
-}
-
 .row {
     width: 100%;
     margin-bottom: 1rem
@@ -108,7 +102,7 @@ nav {
 
 }
 
-.question-container {
+#question-area {
     margin: 4rem 2rem;
 }
 
@@ -118,19 +112,13 @@ nav {
 }
 
 #question {
-    height:20%;
+    height: 20%;
     border-radius: 16px;
     border: 2px solid var(--light-mode-main);
 }
 
 #answers {
     height: 80%;
-}
-
-#answers div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 #answers button {
@@ -142,24 +130,25 @@ nav {
     color: var(--light-mode-main);
 }
 
-#true {
+#left-dropdown {
     position: absolute;
     bottom: 0;
-    width: 50%;
-    text-align: center;
-    border: 1px solid var(--light-mode-main);
+    width: 25%;
 }
 
-#false {
+#right-dropdown {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 50%;
-    text-align: center;
-    border: 1px solid var(--light-mode-main);
+    width: 25%;
 }
 
-
+.results {
+    width: 100%;
+    background-color: var(--light-mode-asisted);
+    color: var(--light-mode-main);
+    border: 2px solid var(--light-mode-main);
+}
 
 /* =========== FOR DESKTOP ============ */
 @media screen and (min-width: 992px) {
@@ -189,15 +178,6 @@ nav {
         margin-right: 3rem;
         text-decoration: none;
         color: var(--light-mode-main);
-    }
-
-    .howto-container {
-        margin: 1rem 0;
-    }
-
-    .howto-area {
-        display: flex;
-        flex-direction: column;
     }
 
     .howto-box {
@@ -233,13 +213,5 @@ nav {
 
     #answers > :last-child {
         margin-bottom: 5rem;
-    }
-
-    #true {
-        width: 16.66%;
-    }
-
-    #false {
-        width: 16.66%;
     }
 }
