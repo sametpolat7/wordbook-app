@@ -123,10 +123,22 @@ nav {
 #answers button {
     margin-top: 2.3rem;
     width: 50%;
-    padding: .75rem;
-    border: 1px solid var(--light-mode-main);
     background-color: var(--light-mode-asisted);
+    border: 1px solid var(--light-mode-main);
+    border-radius: 8px;
     color: var(--light-mode-main);
+    padding: .5rem 1rem;
+    text-align: center;
+    transition: all .15s ease-in-out;
+}
+
+#answers button:hover {
+  background-color: var(--light-mode-main);
+  color: var(--light-mode-asisted);
+}
+
+#answers button:active {
+    border: 8px solid var(--light-mode-main);
 }
 
 .dropdowns {
@@ -175,6 +187,49 @@ nav {
     color: var(--light-mode-asisted);
 }
 
+#result {
+    position: absolute;
+    left: 50%;
+    bottom: 16%;
+}
+
+.correct-anime {
+    position: absolute;
+    left: 50%;
+    bottom: 16%;
+    transform: translateX(-50%);
+    animation: toCorrectBox 2s ease;
+}
+  
+@keyframes toCorrectBox {
+    50% {
+        left: 25%;
+        bottom: 16%;
+    }
+    100% {
+        left: 25%;
+        bottom: 0%;
+    }
+}
+
+.wrong-anime {
+    position: absolute;
+    left: 50%;
+    bottom: 16%;
+    transform: translateX(-50%);
+    animation: toWrongBox 2s ease;
+}
+  
+@keyframes toWrongBox {
+    50% {
+        left: 70%;
+        bottom: 16%;
+    }
+    100% {
+        left: 70%;
+        bottom: 0%;
+    }
+}
 
 /* =========== FOR DESKTOP ============ */
 @media screen and (min-width: 992px) {
