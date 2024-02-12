@@ -3,6 +3,8 @@
 :root {
     --light-mode-main: #5f6f52;
     --light-mode-asisted: #fff;
+    --hardal-sarisi: #ffdb58;
+    --turuncu: #ffa500;
 }
 
 * {
@@ -73,7 +75,7 @@ nav {
 }
 
 #navbar > :nth-child(n) {
-    margin-right: 1.5rem;
+    margin-right: .5rem;
     cursor: pointer;
 }
 
@@ -97,12 +99,22 @@ nav {
 #start-button {
     display: block;
     margin: auto;
+    font-size: 1.5rem;
     padding: 1rem 4rem;
+    background-color: var(--hardal-sarisi);
+    color: #5f6f52;
+    border: 2px solid var(--turuncu);
+    border-radius: 8px;
+    transition: background-color .2s ease-out, padding .1s ease;
+}
 
+#start-button:hover {
+    color: #fff;
+    background-color: var(--turuncu);
 }
 
 #question-area {
-    margin: 2rem;
+    margin: 4rem 2rem 0 2rem;
 }
 
 .question-box {
@@ -113,23 +125,24 @@ nav {
 #question {
     height: 20%;
     border-radius: 16px;
-    border: 2px solid var(--light-mode-main);
+    border: 3px solid var(--light-mode-main);
 }
 
 #answers {
     height: 80%;
+    margin-top: 2rem;
 }
 
 #answers button {
-    margin-top: 2.3rem;
+    margin-top: 1.5rem;
     width: 50%;
     background-color: var(--light-mode-asisted);
-    border: 1px solid var(--light-mode-main);
+    border: 2px solid var(--light-mode-main);
     border-radius: 8px;
     color: var(--light-mode-main);
     padding: .5rem 1rem;
     text-align: center;
-    transition: all .15s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 #answers button:hover {
@@ -137,14 +150,10 @@ nav {
   color: var(--light-mode-asisted);
 }
 
-#answers button:active {
-    border: 8px solid var(--light-mode-main);
-}
-
 .dropdowns {
     position: absolute;
     bottom: 0;
-    width: 48%;
+    width: 47%;
     border: 1px solid var(--light-mode-main);
 }
 
@@ -162,14 +171,14 @@ nav {
 .badges {
     font-size: .75rem;
     margin-left: .5rem;
-    padding: .2rem .4rem;
+    padding: .5rem .8rem;
     border-radius: 50%;
     background-color: var(--light-mode-main);
     color: var(--light-mode-asisted);
 }
 
 .ans-list {
-    height: 140px;
+    height: 180px;
     overflow-y: scroll;
 }
 
@@ -179,7 +188,8 @@ nav {
 }
 
 .ans-list ul li {
-    padding: .8rem;
+    border-bottom: 1px solid var(--light-mode-main);
+    padding: .4rem;
 }
 
 .ans-list ul li:hover {
@@ -188,6 +198,7 @@ nav {
 }
 
 #result {
+    font-size: 1.25rem;
     position: absolute;
     left: 50%;
     bottom: 16%;
@@ -222,11 +233,11 @@ nav {
   
 @keyframes toWrongBox {
     50% {
-        left: 70%;
+        left: 75%;
         bottom: 16%;
     }
     100% {
-        left: 70%;
+        left: 75%;
         bottom: 0%;
     }
 }
@@ -266,6 +277,11 @@ nav {
         flex-direction: row;
     }
 
+    #start-button {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
     #question {
         height: 28%;
     }
@@ -280,6 +296,7 @@ nav {
         width: 30%;
         padding: 1rem;
         margin-top: 0;
+        font-size: 1.5rem;
     }
 
     #answers div {
@@ -297,11 +314,68 @@ nav {
     }
 
     .dropdowns {
-        width: 16.66%;
+        width: 20%;
+    }
+
+    .btn {
+        font-size: 1.5rem;
+    }
+
+    .badges {
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: .8rem 1.2rem;
     }
 
     .ans-list {
         height: 360px;
+    }
+
+    .ans-list ul li {
+        padding: .8rem;
+    }
+
+    #result {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .correct-anime {
+        animation: toCorrectBox 3s ease-in;
+    }
+
+    @keyframes toCorrectBox {
+        25% {
+            left: 50%;
+            bottom: 16%;
+        }
+        50% {
+            left: 10%;
+            bottom: 16%;
+        }
+        100% {
+            left: 10%;
+            bottom: 0%;
+        }
+    }
+
+    .wrong-anime {
+        animation: toWrongBox 3s ease-in;
+    }
+
+    @keyframes toWrongBox {
+        25% {
+            left: 50%;
+            bottom: 16%;
+        }
+        50% {
+            left: 90%;
+            bottom: 16%;
+        }
+        100% {
+            left: 90%;
+            bottom: 0%;
+        }
     }
 
 }
