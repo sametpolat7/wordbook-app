@@ -58,25 +58,23 @@ nav {
     padding: .5rem;
 }
 
-#logo img {
-    width: 200px;
-}
-
-#navbar {
-    text-align: end;
-}
-
-#navbar a {
+#navbar a, #navbar i {
     text-decoration: none;
+    color: var(--light-mode-main);
+    transition: color .2s ease;
 }
 
-#navbar i {
-    color: var(--light-mode-main);
+#navbar a:hover, #navbar i:hover{
+    color: var(--hardal-sarisi);
 }
 
 #navbar > :nth-child(n) {
-    margin-right: .5rem;
+    margin-right: .7rem;
     cursor: pointer;
+}
+
+#brand-img {
+    width: 200px;
 }
 
 .counting {
@@ -85,6 +83,22 @@ nav {
     align-items: center;
     height: 75%;
     font-size: 12rem;
+}
+
+#howto-area {
+    margin: 1rem .5rem 0 .5rem;
+}
+
+#howto-firstImg {
+    object-fit: contain;
+    height: 260px;
+    box-shadow: 1px 1px 2px var(--turuncu);
+}
+
+#howto-secondImg {
+    object-fit: contain;
+    height: 260px;
+    box-shadow: -1px -1px 2px var(--turuncu);
 }
 
 .row {
@@ -98,9 +112,9 @@ nav {
 
 #start-button {
     display: block;
-    margin: auto;
+    margin: 1rem auto 0;
     font-size: 1.5rem;
-    padding: 1rem 4rem;
+    padding: .75rem 3rem;
     background-color: var(--hardal-sarisi);
     color: #5f6f52;
     border: 2px solid var(--turuncu);
@@ -257,7 +271,7 @@ nav {
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
 
-    #logo img {
+    #brand-img {
         width: 360px;
     }
 
@@ -267,7 +281,7 @@ nav {
 
     #navbar > :nth-child(2n) {
         display: inline;
-        margin-right: 3rem;
+        padding: 1.5rem;
         text-decoration: none;
         color: var(--light-mode-main);
     }
@@ -280,6 +294,7 @@ nav {
     #start-button {
         font-size: 2rem;
         font-weight: 700;
+        padding: .75rem 4rem;
     }
 
     #question {
@@ -377,5 +392,4 @@ nav {
             bottom: 0%;
         }
     }
-
 }

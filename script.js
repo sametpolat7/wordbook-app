@@ -15,6 +15,7 @@ class PageAnimations {
             document.documentElement.style.setProperty("--light-mode-asisted", "#5f6f52");
             brandImg.setAttribute("src", "/assets/darkmode.png");
             icon.classList.replace("fa-moon", "fa-sun");
+            // document.getElementById("howto-firstImg").style.boxShadow = "none";
         } else {
             document.documentElement.style.setProperty("--light-mode-main", "#5f6f52");
             document.documentElement.style.setProperty("--light-mode-asisted", "#fff");
@@ -176,7 +177,7 @@ const questions = [
     {question: "convenient", options: ["uygun", "konforlu", "konvensiyonel", "kapsayıcı"], correctAns: "uygun"},
     {question: "recommended", options: ["yorumlamak", "düzenlemek", "tavsiye edilen", "yaygın olan"], correctAns: "tavsiye edilen"},
     {question: "avoid", options: ["kaçınmak", "hiçlik", "saklanmak", "ulaşmak"], correctAns: "kaçınmak"},
-    {question: "indentation", options: ["maşa", "saçmalık", "davetiye", "girinti"], correctAns: "girinti"},
+    {question: "indentation", options: ["maşa", "saçmalık", "davetiye", "girinti"], correctAns: "girinti"}
 ];
 const questionData = new QuestionsAndAnswers(questions);
 
