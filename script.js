@@ -6,21 +6,20 @@ class PageAnimations {
     darkMode() {
         const documentStyleList = window.getComputedStyle(document.documentElement);
         const currentColor = documentStyleList.getPropertyValue("--light-mode-main");
-        const brandImg = document.getElementById("brand-img");
-        const icon = document.getElementById("toggle");
-        
+        const navItems = document.getElementsByTagName("nav")[0].children;
+
         // i added trim() because first click always returned "  #5f6f52"
         if(currentColor.trim() == "#5f6f52") { 
-            document.documentElement.style.setProperty("--light-mode-main", "#fff");
+            document.documentElement.style.setProperty("--light-mode-main", "#191d16");
             document.documentElement.style.setProperty("--light-mode-asisted", "#5f6f52");
-            brandImg.setAttribute("src", "/assets/darkmode.png");
-            icon.classList.replace("fa-moon", "fa-sun");
-            // document.getElementById("howto-firstImg").style.boxShadow = "none";
-        } else {
+            navItems[0].firstElementChild.setAttribute("src", "/assets/darkmode.png");
+            navItems[1].lastElementChild.classList.replace("fa-moon", "fa-sun");
+        } 
+        else {
             document.documentElement.style.setProperty("--light-mode-main", "#5f6f52");
             document.documentElement.style.setProperty("--light-mode-asisted", "#fff");
-            brandImg.setAttribute("src", "/assets/lightmode.png");
-            icon.classList.replace("fa-sun", "fa-moon");
+            navItems[0].firstElementChild.setAttribute("src", "/assets/lightmode.png");
+            navItems[1].lastElementChild.classList.replace("fa-sun", "fa-moon");
         }
     }
 
@@ -94,6 +93,19 @@ window.addEventListener("click", (event) => {
     }
 });
 
+const questionArea = document.getElementById("question");
+const optionA = document.getElementById("A");
+const optionB = document.getElementById("B");
+const optionC = document.getElementById("C");
+const optionD = document.getElementById("D");
+
+// Random number for random index of question.
+function randomNumb() {
+    let randomNumb = Math.floor(Math.random() * questions.length);
+    sessionStorage.setItem("number", randomNumb);
+    return randomNumb;
+}
+
 class QuestionsAndAnswers {
     constructor(data) {
         this.questions = data;
@@ -139,7 +151,7 @@ class QuestionsAndAnswers {
                 list.appendChild(word);
                 correctList.appendChild(list);
                 questionData.newQuestion(randomNumb());
-            }, 2000); // Because .correct-anime has 2s animation.
+            }, 3000); // Because .correct-anime has 2s animation.
 
         }else {
             resultOutput.innerHTML = "Wrong :(";
@@ -153,7 +165,7 @@ class QuestionsAndAnswers {
                 list.appendChild(word);
                 wrongList.appendChild(list);
                 questionData.newQuestion(randomNumb());
-            },2000); // Because .wrong-anime has 2s animation.
+            },3000); // Because .wrong-anime has 2s animation.
         }
     }
 }
@@ -179,22 +191,10 @@ const questions = [
     {question: "avoid", options: ["kaçınmak", "hiçlik", "saklanmak", "ulaşmak"], correctAns: "kaçınmak"},
     {question: "indentation", options: ["maşa", "saçmalık", "davetiye", "girinti"], correctAns: "girinti"}
 ];
+
 const questionData = new QuestionsAndAnswers(questions);
+optionA.addEventListener("click", questionData.selectAnswer);
+optionB.addEventListener("click", questionData.selectAnswer);
+optionC.addEventListener("click", questionData.selectAnswer);
+optionD.addEventListener("click", questionData.selectAnswer);
 
-const questionArea = document.getElementById("question");
-const optionA = document.getElementById("A");
-const optionB = document.getElementById("B");
-const optionC = document.getElementById("C");
-const optionD = document.getElementById("D");
-
-optionA.addEventListener("click", questionData.selectAnswer)
-optionB.addEventListener("click", questionData.selectAnswer)
-optionC.addEventListener("click", questionData.selectAnswer)
-optionD.addEventListener("click", questionData.selectAnswer)
-
-// Random number for random index of question.
-function randomNumb() {
-    let randomNumb = Math.floor(Math.random() * questions.length);
-    sessionStorage.setItem("number", randomNumb);
-    return randomNumb;
-}

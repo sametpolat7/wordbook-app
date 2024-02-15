@@ -3,14 +3,14 @@
 :root {
     --light-mode-main: #5f6f52;
     --light-mode-asisted: #fff;
-    --hardal-sarisi: #ffdb58;
-    --turuncu: #ffa500;
+    --light-yellow: #ffdb58;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .d-flex {display: flex;}
@@ -30,11 +30,6 @@
     align-items: center;
 }
 
-.f2w700 {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
 .f15w700 {
     font-size: 1.5rem;
     font-weight: 700;
@@ -47,7 +42,6 @@
 
 body {
     height: 100vh;
-    font-family: 'Montserrat', sans-serif;
     background-color: var(--light-mode-asisted);
     color: var(--light-mode-main);
 }
@@ -65,7 +59,7 @@ nav {
 }
 
 #navbar a:hover, #navbar i:hover{
-    color: var(--hardal-sarisi);
+    color: var(--light-yellow);
 }
 
 #navbar > :nth-child(n) {
@@ -89,16 +83,9 @@ nav {
     margin: 1rem .5rem 0 .5rem;
 }
 
-#howto-firstImg {
+.howto-img {
     object-fit: contain;
     height: 260px;
-    box-shadow: 1px 1px 2px var(--turuncu);
-}
-
-#howto-secondImg {
-    object-fit: contain;
-    height: 260px;
-    box-shadow: -1px -1px 2px var(--turuncu);
 }
 
 .row {
@@ -115,20 +102,20 @@ nav {
     margin: 1rem auto 0;
     font-size: 1.5rem;
     padding: .75rem 3rem;
-    background-color: var(--hardal-sarisi);
-    color: #5f6f52;
-    border: 2px solid var(--turuncu);
+    background-color: var(--light-yellow);
+    color: #191D16;
+    border: 2px solid #ffa500;
     border-radius: 8px;
-    transition: background-color .2s ease-out, padding .1s ease;
+    transition: background-color .2s ease-out;
 }
 
 #start-button:hover {
     color: #fff;
-    background-color: var(--turuncu);
+    background-color: #ffa500;
 }
 
 #question-area {
-    margin: 4rem 2rem 0 2rem;
+    margin: 2rem 2rem 0 2rem;
 }
 
 .question-box {
@@ -138,7 +125,9 @@ nav {
 
 #question {
     height: 20%;
-    border-radius: 16px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 144px;
     border: 3px solid var(--light-mode-main);
 }
 
@@ -148,20 +137,29 @@ nav {
 }
 
 #answers button {
-    margin-top: 1.5rem;
-    width: 50%;
-    background-color: var(--light-mode-asisted);
-    border: 2px solid var(--light-mode-main);
-    border-radius: 8px;
-    color: var(--light-mode-main);
-    padding: .5rem 1rem;
+    width: 70%;
+    margin-top: 1rem;
+    padding: .75rem 1.25rem;
     text-align: center;
-    transition: all .2s ease-in-out;
+    border: 2px solid var(--light-mode-main);
+    border-radius: 36px;
+    background-color: var(--light-mode-asisted);
+    color: var(--light-mode-main);
 }
 
 #answers button:hover {
-  background-color: var(--light-mode-main);
-  color: var(--light-mode-asisted);
+    background-color: var(--light-mode-main);
+    color: var(--light-mode-asisted);
+    animation: shake 0.5s infinite alternate;
+}
+
+@keyframes shake {
+    from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(16px); /* Adjust the distance to shake on hover */
+      }
 }
 
 .dropdowns {
@@ -176,10 +174,11 @@ nav {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 1rem;
+    padding: .5rem;
     background-color: var(--light-mode-asisted);
     color: var(--light-mode-main);
     border: 1px solid var(--light-mode-main);
+    box-shadow: 0 0 8px 3px var(--light-mode-main);
 }
 
 .badges {
@@ -197,6 +196,7 @@ nav {
 }
 
 .ans-list ul {
+    margin-top: 1rem;
     font-size: 1.25rem;
     list-style-type: none;
 }
@@ -212,7 +212,6 @@ nav {
 }
 
 #result {
-    font-size: 1.25rem;
     position: absolute;
     left: 50%;
     bottom: 16%;
@@ -223,7 +222,7 @@ nav {
     left: 50%;
     bottom: 16%;
     transform: translateX(-50%);
-    animation: toCorrectBox 2s ease;
+    animation: toCorrectBox 3s ease;
 }
   
 @keyframes toCorrectBox {
@@ -242,7 +241,7 @@ nav {
     left: 50%;
     bottom: 16%;
     transform: translateX(-50%);
-    animation: toWrongBox 2s ease;
+    animation: toWrongBox 3s ease;
 }
   
 @keyframes toWrongBox {
@@ -286,6 +285,10 @@ nav {
         color: var(--light-mode-main);
     }
 
+    #toggle {
+        padding: 1.5rem;
+    }
+
     .howto-box {
         display: flex;
         flex-direction: row;
@@ -299,17 +302,20 @@ nav {
 
     #question {
         height: 28%;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 3rem;
     }
 
     #answers {
         height: 72%;
+        margin-top: 1rem;
         display: flex;
         flex-direction: column;
     }
 
     #answers button {
-        width: 30%;
-        padding: 1rem;
+        width: 35%;
         margin-top: 0;
         font-size: 1.5rem;
     }
@@ -334,12 +340,13 @@ nav {
 
     .btn {
         font-size: 1.5rem;
+        font-weight: 700;
     }
 
     .badges {
+        padding: .6rem 1rem;
+        margin-left: 1rem;
         font-size: 1.5rem;
-        font-weight: 700;
-        padding: .8rem 1.2rem;
     }
 
     .ans-list {
@@ -351,12 +358,25 @@ nav {
     }
 
     #result {
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 700;
     }
 
+::-webkit-scrollbar {  /* Customize scrollbar */
+    width: 4px;
+    }
+
+  ::-webkit-scrollbar-track {  /* Customize scrollbar track */
+    background: var(--light-mode-asisted);
+    }
+
+  ::-webkit-scrollbar-thumb {  /* Customize scrollbar handle */
+    background: var(--light-mode-main);
+    border-radius: 36px;
+    }
+
     .correct-anime {
-        animation: toCorrectBox 3s ease-in;
+        animation: toCorrectBox 3s ease;
     }
 
     @keyframes toCorrectBox {
@@ -375,7 +395,7 @@ nav {
     }
 
     .wrong-anime {
-        animation: toWrongBox 3s ease-in;
+        animation: toWrongBox 3s ease;
     }
 
     @keyframes toWrongBox {
@@ -384,11 +404,11 @@ nav {
             bottom: 16%;
         }
         50% {
-            left: 90%;
+            left: 88%;
             bottom: 16%;
         }
         100% {
-            left: 90%;
+            left: 88%;
             bottom: 0%;
         }
     }
