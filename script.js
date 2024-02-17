@@ -151,7 +151,7 @@ class QuestionsAndAnswers {
                 list.appendChild(word);
                 correctList.appendChild(list);
                 questionData.newQuestion(randomNumb());
-            }, 3000); // Because .correct-anime has 2s animation.
+            }, 3000); // Because .correct-anime has 3s animation.
 
         }else {
             resultOutput.innerHTML = "Wrong :(";
@@ -165,7 +165,7 @@ class QuestionsAndAnswers {
                 list.appendChild(word);
                 wrongList.appendChild(list);
                 questionData.newQuestion(randomNumb());
-            },3000); // Because .wrong-anime has 2s animation.
+            },3000); // Because .wrong-anime has 3s animation.
         }
     }
 }
@@ -189,7 +189,12 @@ const questions = [
     {question: "convenient", options: ["uygun", "konforlu", "konvensiyonel", "kapsayıcı"], correctAns: "uygun"},
     {question: "recommended", options: ["yorumlamak", "düzenlemek", "tavsiye edilen", "yaygın olan"], correctAns: "tavsiye edilen"},
     {question: "avoid", options: ["kaçınmak", "hiçlik", "saklanmak", "ulaşmak"], correctAns: "kaçınmak"},
-    {question: "indentation", options: ["maşa", "saçmalık", "davetiye", "girinti"], correctAns: "girinti"}
+    {question: "indentation", options: ["maşa", "saçmalık", "davetiye", "girinti"], correctAns: "girinti"},
+    {question: "refer", options: ["atfetmek, değinmek", "reddetmek", "denemek", "yakınmak, söylenmek"], correctAns: "atfetmek, değinmek"},
+    {question: "equivalent", options: ["klas", "eş değer", "ekipman", "masum"], correctAns: "eş değer"},
+    {question: "alter", options: ["atlet", "kapsamak", "kiralamak", "değiştirmek"], correctAns: "değiştirmek"},
+
+    
 ];
 
 const questionData = new QuestionsAndAnswers(questions);

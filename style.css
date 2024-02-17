@@ -246,14 +246,27 @@ nav {
   
 @keyframes toWrongBox {
     50% {
-        left: 75%;
+        left: 70%;
         bottom: 16%;
     }
     100% {
-        left: 75%;
+        left: 70%;
         bottom: 0%;
     }
 }
+
+    ::-webkit-scrollbar {  /* Customize scrollbar */
+    width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {  /* Customize scrollbar track */
+    background: var(--light-mode-asisted);
+    }
+
+    ::-webkit-scrollbar-thumb {  /* Customize scrollbar handle */
+    background: var(--light-mode-main);
+    border-radius: 36px;
+    }
 
 /* =========== FOR DESKTOP ============ */
 @media screen and (min-width: 992px) {
@@ -360,19 +373,6 @@ nav {
     #result {
         font-size: 2.5rem;
         font-weight: 700;
-    }
-
-::-webkit-scrollbar {  /* Customize scrollbar */
-    width: 4px;
-    }
-
-  ::-webkit-scrollbar-track {  /* Customize scrollbar track */
-    background: var(--light-mode-asisted);
-    }
-
-  ::-webkit-scrollbar-thumb {  /* Customize scrollbar handle */
-    background: var(--light-mode-main);
-    border-radius: 36px;
     }
 
     .correct-anime {
