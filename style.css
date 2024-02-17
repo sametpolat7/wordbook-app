@@ -103,7 +103,7 @@ nav {
     font-size: 1.5rem;
     padding: .75rem 3rem;
     background-color: var(--light-yellow);
-    color: #191D16;
+    color: var(--light-mode-main);
     border: 2px solid #ffa500;
     border-radius: 8px;
     transition: background-color .2s ease-out;

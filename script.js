@@ -32,7 +32,7 @@ class PageAnimations {
         howtoArea.classList.add("d-none");
         countItem.classList.add("counting");
 
-        let i = 1;
+        let i = 3;
         const countdown = setInterval(() => {
             countItem.innerHTML = i;
             i--;
@@ -99,11 +99,13 @@ const optionB = document.getElementById("B");
 const optionC = document.getElementById("C");
 const optionD = document.getElementById("D");
 
+const optionArr = [optionA, optionB, optionC, optionD];
+
 // Random number for random index of question.
 function randomNumb() {
-    let randomNumb = Math.floor(Math.random() * questions.length);
-    sessionStorage.setItem("number", randomNumb);
-    return randomNumb;
+    let index = Math.floor(Math.random() * questions.length);
+    sessionStorage.setItem("number", index);
+    return index;
 }
 
 class QuestionsAndAnswers {
@@ -142,6 +144,11 @@ class QuestionsAndAnswers {
         if(selectedOption === correctAnswer) {
             resultOutput.innerHTML = "Correct :)";
             resultOutput.classList.replace("d-none", "correct-anime");
+
+            optionArr.forEach((value) => {
+                value.disabled = true;
+            })
+
             setTimeout(() => {
                 resultOutput.classList.add("d-none");
                 resultOutput.classList.remove("correct-anime");
@@ -150,12 +157,22 @@ class QuestionsAndAnswers {
                 let word = document.createTextNode(stringQuestion);
                 list.appendChild(word);
                 correctList.appendChild(list);
+
+                optionArr.forEach((value) => {
+                    value.disabled = false;
+                })
+
                 questionData.newQuestion(randomNumb());
             }, 3000); // Because .correct-anime has 3s animation.
 
         }else {
             resultOutput.innerHTML = "Wrong :(";
             resultOutput.classList.replace("d-none", "wrong-anime");
+
+            optionArr.forEach((value) => {
+                value.disabled = true;
+            })
+
             setTimeout(() => {
                 resultOutput.classList.add("d-none");
                 resultOutput.classList.remove("wrong-anime");
@@ -164,6 +181,11 @@ class QuestionsAndAnswers {
                 let word = document.createTextNode(stringQuestion);
                 list.appendChild(word);
                 wrongList.appendChild(list);
+
+                optionArr.forEach((value) => {
+                    value.disabled = false;
+                })
+
                 questionData.newQuestion(randomNumb());
             },3000); // Because .wrong-anime has 3s animation.
         }
@@ -172,18 +194,14 @@ class QuestionsAndAnswers {
 
 // Question instances written in the array.
 const questions = [
-    {question: "label", options: ["etiket", "değişim", "yolculuk", "yaprak"], correctAns: "etiket"},
     {question: "determine", options: ["belirlemek", "meraklı", "mücadele", "maden"], correctAns: "belirlemek"},
     {question: "visualization", options: ["değiştirme", "güçlendirme", "görselleştirme", "yapılandırma"], correctAns: "görselleştirme"},
-    {question: "preference", options: ["tercih", "deneyim", "etkileşim", "açıklama"], correctAns: "tercih"},
     {question: "appear", options: ["farkında olmak", "kavramak", "belli olmak, görünmek", "ifade etmek"], correctAns: "belli olmak, görünmek"},
     {question: "least", options: ["canavar", "asgari, en küçük", "soğuk", "liste"], correctAns: "asgari, en küçük"},
     {question: "consist", options: ["içermek", "tasarlamak", "meydana gelmek", "direnmek"], correctAns: "meydana gelmek"},
-    {question: "addition", options: ["yerel", "ek", "aidiyet", "anı"], correctAns: "ek"},
     {question: "provide", options: ["sağlamak", "hissetmek", "eğitmek", "tasarlamak"], correctAns: "sağlamak"},
     {question: "violation", options: ["ihlal", "korku", "sessizlik", "ıssız"], correctAns: "ihlal"},
     {question: "suddenly", options: ["sıradan", "tehlikeli", "yavaşca", "birden, aniden"], correctAns: "birden, aniden"},
-    {question: "preserve", options: ["hazırlamak", "korumak", "sunmak", "servis etmek"], correctAns: "korumak"},
     {question: "abbreviation", options: ["kısaltma", "kesme", "çoğaltma", "toplamak"], correctAns: "kısaltma"},
     {question: "clarify", options: ["açıklık getirmek", "temizlemek", "kılıf bulmak", "akıl vermek"], correctAns: "açıklık getirmek"},
     {question: "convenient", options: ["uygun", "konforlu", "konvensiyonel", "kapsayıcı"], correctAns: "uygun"},
@@ -192,9 +210,15 @@ const questions = [
     {question: "indentation", options: ["maşa", "saçmalık", "davetiye", "girinti"], correctAns: "girinti"},
     {question: "refer", options: ["atfetmek, değinmek", "reddetmek", "denemek", "yakınmak, söylenmek"], correctAns: "atfetmek, değinmek"},
     {question: "equivalent", options: ["klas", "eş değer", "ekipman", "masum"], correctAns: "eş değer"},
-    {question: "alter", options: ["atlet", "kapsamak", "kiralamak", "değiştirmek"], correctAns: "değiştirmek"},
-
-    
+    {question: "accomplish", options: ["sonuçlandırmak", "fiyatlandırmak", "ilişki kurmak", "yakalamak"], correctAns: "sonuçlandırmak"},
+    {question: "adjust", options: ["reklam", "sadeleştirmek", "ayarlamak", "eklemek"], correctAns: "ayarlamak"},
+    {question: "individual", options: ["tek, bireysel", "yalın", "bölmek", "ilahi, yüce"], correctAns: "tek, bireysel"},
+    {question: "whether", options: ["hava durumu", "uyanık", "ikisinden biri", "kesinlik"], correctAns: "ikisinden biri"},
+    {question: "demonstrate", options: ["göstermek, kanıtlamak", "şeytan işi", "rapor, bildirgeç", "çıkmaz sokak"], correctAns: "göstermek, kanıtlamak"},
+    {question: "misleading", options: ["zarif", "özlem", "yanıltıcı", "tuzak"], correctAns: "yanıltıcı"},
+    {question: "desctruction", options: ["brifing", "kaynakça", "açıklama, talimat", "yıkım, imha"], correctAns: "yıkım, imha"},
+    {question: "spread", options: ["depar atmak", "dilimlemek", "yaymak", "hızlı okumak"], correctAns: "yaymak"},
+    {question: "maintain", options: ["dağ", "ana fikir", "korumak, sürdürmek", "kaldırmak"], correctAns: "korumak, sürdürmek"}
 ];
 
 const questionData = new QuestionsAndAnswers(questions);
