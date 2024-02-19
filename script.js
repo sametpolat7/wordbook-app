@@ -218,7 +218,9 @@ const questions = [
     {question: "misleading", options: ["zarif", "özlem", "yanıltıcı", "tuzak"], correctAns: "yanıltıcı"},
     {question: "desctruction", options: ["brifing", "kaynakça", "açıklama, talimat", "yıkım, imha"], correctAns: "yıkım, imha"},
     {question: "spread", options: ["depar atmak", "dilimlemek", "yaymak", "hızlı okumak"], correctAns: "yaymak"},
-    {question: "maintain", options: ["dağ", "ana fikir", "korumak, sürdürmek", "kaldırmak"], correctAns: "korumak, sürdürmek"}
+    {question: "maintain", options: ["dağ", "ana fikir", "korumak, sürdürmek", "kaldırmak"], correctAns: "korumak, sürdürmek"},
+    {question: "consider", options: ["dikkate almak", "kafası karışık", "kapatmak", "meydana gelmek"], correctAns: "dikkate almak"},
+    {question: "require", options: ["dikkatli", "kare", "gerekli", "yenilik"], correctAns: "gerekli"}
 ];
 
 const questionData = new QuestionsAndAnswers(questions);
