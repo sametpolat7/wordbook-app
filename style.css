@@ -58,10 +58,6 @@ nav {
     transition: color .2s ease;
 }
 
-#navbar a:hover, #navbar i:hover{
-    color: var(--light-yellow);
-}
-
 #navbar > :nth-child(n) {
     margin-right: .7rem;
     cursor: pointer;
@@ -115,7 +111,7 @@ nav {
 }
 
 #question-area {
-    margin: 2rem 2rem 0 2rem;
+    margin: 1rem 2rem 0 2rem;
 }
 
 .question-box {
@@ -133,7 +129,6 @@ nav {
 
 #answers {
     height: 80%;
-    margin-top: 2rem;
 }
 
 #answers button {
@@ -145,21 +140,6 @@ nav {
     border-radius: 36px;
     background-color: var(--light-mode-asisted);
     color: var(--light-mode-main);
-}
-
-#answers button:hover {
-    background-color: var(--light-mode-main);
-    color: var(--light-mode-asisted);
-    animation: shake 0.5s infinite alternate;
-}
-
-@keyframes shake {
-    from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(16px); /* Adjust the distance to shake on hover */
-      }
 }
 
 .dropdowns {
@@ -210,7 +190,6 @@ nav {
     background-color: var(--light-mode-main);
     color: var(--light-mode-asisted);
 }
-
 #result {
     position: absolute;
     left: 50%;
@@ -299,6 +278,10 @@ nav {
         color: var(--light-mode-main);
     }
 
+    #navbar a:hover, #navbar i:hover{
+        color: var(--light-yellow);
+    }
+
     #toggle {
         padding: 1.5rem;
     }
@@ -332,6 +315,22 @@ nav {
         width: 35%;
         margin-top: 0;
         font-size: 1.5rem;
+    }
+
+    
+    #answers button:hover {
+        background-color: var(--light-mode-main);
+        color: var(--light-mode-asisted);
+        animation: shake 0.5s infinite alternate;
+    }
+
+    @keyframes shake {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(16px); /* Adjust the distance to shake on hover */
+        }
     }
 
     #answers div {
