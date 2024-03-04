@@ -220,7 +220,9 @@ const questions = [
     {question: "spread", options: ["depar atmak", "dilimlemek", "yaymak", "hızlı okumak"], correctAns: "yaymak"},
     {question: "maintain", options: ["dağ", "ana fikir", "korumak, sürdürmek", "kaldırmak"], correctAns: "korumak, sürdürmek"},
     {question: "consider", options: ["dikkate almak", "kafası karışık", "kapatmak", "meydana gelmek"], correctAns: "dikkate almak"},
-    {question: "require", options: ["dikkatli", "kare", "gerekli", "yenilik"], correctAns: "gerekli"}
+    {question: "require", options: ["dikkatli", "kare", "gerekli", "yenilik"], correctAns: "gerekli"},
+    {question: "divide", options: ["bölmek", "aydınlık", "derinlik", "DVD"], correctAns: "bölmek"},
+    {question: "several", options: ["genel", "birçok", "biraz", "servis"], correctAns: "birçok"},
 ];
 
 const questionData = new QuestionsAndAnswers(questions);

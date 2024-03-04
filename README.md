@@ -2,7 +2,7 @@
 
 In this project, I designed a vocabulary quiz application using JavaScript. When the user clicks the "Start!" button, the counter counts down from 3 and the first question is loaded. If the question is answered correctly, it is added to the "Correct" list and if it is answered incorrectly, it is added to the "Wrong" list. After the question is answered, a 3-second animation is activated and then a random word is drawn from the word pool and printed on the screen.
 
-![WordBook App](/assets/howto-second.png)
+![WordBook App](/assets/howto-img2.png)
 
 ## Live
 
