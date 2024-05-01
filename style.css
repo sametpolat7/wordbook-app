@@ -50,6 +50,7 @@ nav {
     border-bottom: 2px solid var(--light-mode-main);
     height: 72px;
     padding: .5rem;
+    user-select: none;
 }
 
 #navbar a, #navbar i {
