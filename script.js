@@ -407,6 +407,41 @@ const questions = [
     question: 'available',
     options: ['mevcut, geçerli', 'beklenebilir', 'egzotik', 'zamanlı'],
     correctAns: 'mevcut, geçerli'
+  },
+  {
+    question: 'establish',
+    options: ['kurmak', 'emlak', 'tahmin etmek', 'gerekli'],
+    correctAns: 'kurmak'
+  },
+  {
+    question: 'session',
+    options: ['göndermek', 'susam', 'sapsız', 'oturum'],
+    correctAns: 'oturum'
+  },
+  {
+    question: 'although',
+    options: ['tamamen', 'tamam', 'rağmen', 'değiştirmek'],
+    correctAns: 'rağmen'
+  },
+  {
+    question: 'ascent',
+    options: ['tespit etmek', 'yükselme', 'değerlendirme', 'çarpık'],
+    correctAns: 'yükselme'
+  },
+  {
+    question: 'descent',
+    options: ['betimlemek', 'tanım', 'alçalma', 'hak etmek'],
+    correctAns: 'alçalma'
+  },
+  {
+    question: 'aggregate',
+    options: ['kabul etmek', 'aykırı', 'saldırgan', 'toplam'],
+    correctAns: 'toplam'
+  },
+  {
+    question: 'authentication',
+    options: ['kimlik doğrulama', 'yetkilendirme', 'otantik', 'yazı işi'],
+    correctAns: 'kimlik doğrulama'
   }
 ];
 
